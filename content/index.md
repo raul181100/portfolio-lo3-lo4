@@ -1,184 +1,235 @@
 ---
 type: portfolio
+learning-outcome: LO3
 status: draft
-created: 2026-11-18
+updated: 2026-11-18
 hand-in: 2026-12-11
 cssclasses:
   - portfolio
 ---
-# Portfolio: Raul · HouseMate
+# Portfolio LO3: planning and process in HouseMate
 
-> [!info] Focus of this draft
-> LO3 (project plan and process) and LO4 (reflection and reporting). Feedback to answer: Chris (16 Nov) and the LO3 comment *"show me, don't just tell me"*.
-> Language: English, to match the course material. The Dutch translation is in Canvas.
-> Rule for this document: every claim links to a note, a date or a file. If there is no evidence yet, it says **[TODO]**.
+> [!info] About this document
+> This document covers LO3 only: how I planned the project, what I looked at to make the plan, and why I made each choice. Following Chris's feedback (16 and 18 Nov), it focuses on concrete steps and the reasons behind them.
+>
+> Status on 18 November 2026. Items marked **[TODO]** still need evidence or confirmation.
 
-## 0. How to read this portfolio
+## 1. The project in brief
 
-I document the project in one Obsidian vault. Every decision, bug, sprint, feedback session and daily log is a note that follows a fixed template. The links between the notes are the process itself:
+- **Product:** HouseMate, an app to share a house: houses, members, shared expenses, and, from Sprint 3, two roles: tenant and landlord ([[HouseMate]]).
+- **My part:** the Android app (Java) and the Spring Boot REST API ([[Endpoints]]).
+- **Team:** Anushree (website), Daniel (database), Nikolay (website–API connection and IoT). We meet on Monday, Wednesday and Friday.
+- **Hand-in:** 11 December 2026.
 
-`[[HouseMate]]` → `[[Sprint 3]]` → `[[Role type]]` → `[[Null enum in DB]]` → lesson in the Knowledge notes
+## 2. The plan
 
-Each note answers the same questions: what was the context, which options did I consider, what did I choose and why, how did I validate it, and would I decide the same today.
-
-## 1. Competencies and where the evidence is
-
-| Competency (course goal) | What I did in practice | Evidence |
-| --- | --- | --- |
-| Project organisation | Sprint plans with a "Done when" criterion per block. Group sprint split by person. | [[Sprint 3]] · [[Group_sprint 3]] |
-| Communication and reporting | Feedback notes with "what I did" and "what changed". Daily logs. Sprint review with a MoSCoW proposal. | [[Frank - team rules and scope]] · [[Martin -Documentation on software development and useful technologies]] · [[Chris 2026-11-16]] |
-| Exploratory research | Options tables for each decision. Bug investigation step by step. | [[Role type]] · [[Null enum in DB]] |
-| Reporting | Sprint close (Done / Not done / Deviation / MoSCoW changes). | [[Sprint 1]] · [[Sprint 2]] **[TODO: empty, see §8]** |
-
-> [!question] Mapping to LO3 and LO4
-> I link the competencies to LO3 (planning, research, validation) and LO4 (reporting and reflection). **[TODO: confirm the exact LO3 and LO4 wording with Chris.]**
-
-## 2. The project plan: from milestones to steps
-
-### 2.1 Project level
+### 2.1 Sprints
 
 | Sprint | Dates | Goal | Status on 18 Nov |
 | --- | --- | --- | --- |
-| 1 | 2–8 Nov | **[TODO: goal not written]** | Note empty |
-| 2 | 9–15 Nov | **[TODO: goal not written]** | Note empty |
+| 1 | 2–8 Nov | **[TODO: goal not written]** | Registration and login work ([[HouseMate]]) |
+| 2 | 9–15 Nov | **[TODO: goal not written]** | House creation, joining by code and expense split work ([[HouseMate]]) |
 | 3 | 16–22 Nov | Tenant and landlord roles, landlord views, logout | In progress (see 2.2) |
 | 4 | 23–29 Nov | **[TODO]** | Not started |
 | 5 | 30 Nov–6 Dec | **[TODO]** | Not started |
 | 6 | 7–11 Dec | **[TODO]** | Not started |
 
-Source: [[HouseMate]].
+Sprints 1 and 2 were not filled in during the sprint. **[TODO: write their goals and closes, and say clearly that they were written afterwards.]** See [[Sprint 1]] and [[Sprint 2]].
 
-### 2.2 Sprint 3 broken down into steps
+### 2.2 Sprint 3 in steps
 
-The sprint has **7 blocks and 19 steps**. Each block has a "Done when" sentence, so I can check whether it is finished. This is how I answered the feedback "break tasks into smaller steps":
+The sprint has seven blocks and 19 steps. Each block has a "Done when" sentence, so I can tell if it is finished ([[Sprint 3]]).
 
-| Block | Done when (from the sprint note) | Steps |
+| Block | Done when | Steps | Status on 18 Nov |
+| --- | --- | --- | --- |
+| Documentation and planning | Group tasks split by person; role decision and endpoints documented | 3 | Group split done ([[Group_sprint 3]]). Role decisions documented. The endpoints note still needs the new role endpoints. |
+| Roles | Every user has a role in the database and the app receives it at login | 3 | Enum and column done (16–17 Nov). Registration saves the role (17 Nov). The app reads the role at login. End-to-end test not confirmed (see §8). |
+| Views per role | Tenant and landlord see different screens after login | 3 | Navigation graph and the two home fragments created (18 Nov). Not tested yet. |
+| Landlord: create houses | A landlord can create a house; a tenant cannot | 2 | Not started. No endpoint checks the role yet ([[Pendientes Android]]). |
+| Expenses | A list of expenses, adding one, and opening its detail | 3 | List works. Adding and the detail screen are not in the app yet ([[Endpoints]]). |
+| IoT | The app shows IoT data in a chart | 4 | Waiting for Nikolay's data ([[IoT devices]]). |
+| Logout | Logout returns to login; back does not return into the app | 1 | **[TODO: status]** |
+
+### 2.3 Group level
+
+| Member | Tasks in Group Sprint 3 | Note |
 | --- | --- | --- |
-| Documentation & planning | Group tasks split by person; role decision and endpoints documented | 3 |
-| Roles | Every user has a role saved in the database and the app receives it at login | 3 |
-| Views per role | Tenant and landlord see different screens after login | 3 |
-| Landlord: create houses | A landlord can create a house; a tenant cannot | 2 |
-| Expenses | In a house: list, add, open detail | 3 |
-| IoT | The app shows IoT data from the backend in a chart | 4 (depends on Nikolay's data) |
-| Logout | Logout returns to login; back button does not re-enter | 1 |
-
-### 2.3 Group level (Group Sprint 3, 16–22 Nov)
-
-| Member | Tasks this sprint | Note |
-| --- | --- | --- |
-| Raul | IoT ↔ Android · Roles | Roles is my individual block |
-| Nikolay | IoT ↔ Android · Website ↔ Spring Boot | Depends on Nikolay for the IoT data |
+| Raul | IoT ↔ Android, roles | Roles is my block. Four cards on the board alone ([[Group_sprint 3]]). |
+| Nikolay | IoT ↔ Android, website ↔ Spring Boot | IoT depends on his data. |
 | Anushree | Website ↔ Spring Boot | |
-| Daniel | Group tasks only | Database. The eduCloud database was not ready on 16 Nov. |
-| Everyone | Research · planning and Trello document | |
+| Daniel | Group tasks | Owns the shared database. |
 
-Source: [[Group_sprint 3]].
+## 3. How I arrived at the plan
 
-## 3. How I arrived at this plan
+The plan changed after each input. This is the timeline.
 
-The plan did not come from one moment. It was changed after each input. This is the timeline.
+| Date | Input | What I did with it |
+| --- | --- | --- |
+| 10 Nov | Frank: avoid an ambitious project with little time; set group rules. | Group rules and regular meetings, each with a focus. Commitment improved but is still in progress. [[Frank - team rules and scope]] |
+| 13 Nov | Martin: do not leave integration to the end; document with diagrams (C4). | Back end unified into [[Spring Boot]]; diagrams per layer ([[Diagrams]]). [[Martin -Documentation on software development and useful technologies]] |
+| 13 Nov | My review of Sprint 3: seven blocks in one week, and IoT depends on data I do not have. | A MoSCoW proposal for the sprint (§3.1). |
+| 13 Nov | Group review: four integrations in one week. | Website ↔ Spring Boot is the candidate to move to Sprint 4. **[TODO: confirm what the group decided on Monday 16.]** [[Group_sprint 3]] |
+| 16 Nov | Talk with Chris about LO3: concrete steps and evidence. | I prepared questions and restructured the documentation around decisions. [[Chris 2026-11-16]] |
+| 16 Nov | I could not connect to the shared database from eduCloud. | I ran the backend against the database on my own machine. Dependency on Daniel noted. [[PostgreSQL as shared database]] |
+| 17 Nov | The role column failed on existing users (90 minutes lost). | Root cause found; fix applied; lesson noted. [[Null enum in DB]] |
+| 17 Nov | Frank did not attend the planned talk. | I moved the topics (documentation, Obsidian documents as Markdown) to Teams messages. [[Daily 2026-11-17]] |
+| 18 Nov | Chris: LO3 should be pragmatic and explain the "why"; ask for feedback every week. | This document, and a weekly feedback request. [[Chris - Portfolio_2 Review]] |
+| 18 Nov | Role-based screens: two activities, one activity with visibility changes, or one host with fragments. | Fragments chosen; navigation graph updated the same day. [[Role-based screens]] |
 
-| Date   | Input                                                                              | What I did with it                                                                                                                                                                           |
-| ------ | ---------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 10 Nov | Frank: avoid an ambitious project with little time; set group rules                | Group rules and regular meetings with a focus per meeting. Result: better communication, commitment still "in progress". [[Frank - team rules and scope]]                                    |
-| 13 Nov | Martin: do not leave integration until the end; document with diagrams (C4)        | Back end unified into [[Spring Boot]]. Diagrams per layer. [[Martin -Documentation on software development and useful technologies]]                                                         |
-| 13 Nov | My own review of Sprint 3: 7 blocks in one week, IoT depends on data I do not have | MoSCoW proposal for the sprint (see 3.1).                                                                                                                                                    |
-| 13 Nov | Group review: four integrations in one week                                        | Candidate to move to Sprint 4: Website ↔ Spring Boot. **[TODO: confirm whether the group decided this on Monday.]** [[Group_sprint 3]]                                                       |
-| 16 Nov | Chris: LO3 needs research and validation, not opinions                             | I restructured my documentation: how I got the knowledge, how I used it, why. [[Chris 2026-11-16]]                                                                                           |
-| 16 Nov | Could not connect to eduCloud: the database was not set up                         | Dependency on Daniel found. Backend started locally on 18 Nov with the container password as an environment variable. [[Diario 2026-11-16]] · [[Diario 2026-11-18]] |
-| 17 Nov | Null value error on the role column: 90 minutes lost                               | Root cause found, fix applied, lesson recorded. [[Null enum in DB]]                                                                                                                          |
-
-### 3.1 MoSCoW for Sprint 3 (the proposal from 13 Nov)
+### 3.1 MoSCoW for Sprint 3 (proposed 13 Nov)
 
 | Priority | Blocks | Why |
 | --- | --- | --- |
-| Must | Roles · Views per role · Logout · Documentation | Without roles, the other blocks have no meaning |
-| Should | Landlord: create houses · IoT: analyse data and endpoint | Needed, but IoT depends on someone else |
-| Could | Expenses | Already partly works according to [[HouseMate]] |
-| Next sprint | IoT logic and chart | Depends on data that does not exist yet |
+| Must | Roles · Views per role · Logout · Documentation | Without roles, the other blocks have no meaning. |
+| Should | Landlord: create houses · IoT: analyse data and endpoint | Needed, but IoT depends on someone else's data. |
+| Could | Expenses | Part of it already works ([[HouseMate]]). |
+| Next sprint | IoT logic and chart | Depends on data that does not exist yet. |
 
-> [!note] Why this is a proposal and not a finished decision
-> The rule I set myself: whatever moves to Sprint 4 is written as a **decision** in "MoSCoW changes", not as "no time".
+Whatever moves to Sprint 4 is written as a decision in the sprint's "MoSCoW changes", not as "no time".
 
-### 3.2 Was the scope right? (honest check on 18 Nov)
+## 4. Was the scope right?
 
-**No, not completely.** Evidence:
+**Not for Sprint 3 as planned.** Three things show it:
 
-- Sprint 3 had 7 blocks, but the Views block depends on the role being saved first. On 13 Nov I wrote the IoT block depends on data I did not have, but I did not write the same warning for the Views block.
-- The Trello workload showed I had 4 cards alone in week 3 (Roles). The null-value bug cost 90 minutes of that week.
-- The sprint is still open: "Done: 0" in the sprint note is out of date, but several steps are not finished (no endpoint checks the role yet; views are in progress).
+- The views block needs roles to be saved first. The role column was only working on 17 Nov, so by 18 Nov five days were left for three blocks.
+- The group had four integrations in one week. Frank had warned about this on 10 Nov, and I did not put the warning into my own plan.
+- The IoT block depended on another person's data from the start. I wrote this down on 13 Nov but did not turn it into a step with a date.
 
-**What I would change:** decide the Must/Should/Could split on the first day of the sprint, and make the database dependency a step of its own with an owner and a date.
+**What I would change:** decide the Must and Should blocks on the first day of the sprint, and give every dependency its own step with an owner and a date.
 
-## 4. Research and validation
+## 5. What I looked at and where the information came from
 
-### 4.1 What I looked at, and where the information came from
+| Source | Type | What it gave me | Used in |
+| --- | --- | --- | --- |
+| Frank (10 Nov) | Feedback session | Group rules; scope; the portfolio can contain shared documents | §3, §4 |
+| Martin (13 Nov) | Feedback session | Diagrams (C4); integrate early; the endpoints document was clear | §3, §6 |
+| Chris (16 and 18 Nov) | Feedback and questions | LO3 should be concrete and explain the why; weekly feedback | §3, §8 |
+| c4model.com (recommended by Martin) | Website | Levels of diagrams: a general view, then zoom in by layer | [[Diagrams]] |
+| Android Developers: SharedPreferences | Documentation | How to save small data between sessions | [[SharedPreferences session]] |
+| Android Developers: Navigation, start destination | Documentation | How the start screen is chosen | [[Role-based screens]] |
+| Android Developers: Kotlin and Java | Documentation | How the two languages work together | [[Java instead of Kotlin]] |
+| Spring Security and OWASP: password storage | Documentation | Why passwords must be stored as hashes | [[BCrypt for passwords]] |
+| Baeldung: Retrofit tutorial | Tutorial | How Retrofit turns API calls into Java methods | [[Retrofit for API calls]] |
+| howtodoinjava: NotBlank vs NotNull | Article | Why a new field fails on old rows | [[Null enum in DB]] |
+| My own code | Code check (16 Nov) | What the backend already does with roles | [[Role type]] |
+| Trello board | Board | Who does what, and the workload | [[Group_sprint 3]] |
+| Daily notes | My logs | What happened each day | [[Daily 2026-11-16]], [[Daily 2026-11-17]], [[Daily 2026-11-18]] |
 
-| Source | What it gave me | Used in |
-| --- | --- | --- |
-| Frank (10 Nov), Martin (13 Nov), Chris (16 Nov) | Scope, documentation approach, LO3/LO4 expectations | §3, §5 |
-| c4model.com (recommended by Martin) | Levels of diagrams: general view, then zoom in per layer | Diagrams in [[Diagrams]] |
-| Android docs: Navigation component, start destination | How the start screen is chosen in `nav_graph.xml` | [[Role-based screens]] |
-| howtodoinjava: NotBlank vs NotNull | Why a new field fails on old rows | [[Null enum in DB]] |
-| My own code: `RoleType`, `CreateUserRequest`, `UserResponse` (code check 16 Nov) | What the backend already does | [[Role type]] |
-| Team: Trello board and Nikolay's IoT data | Who depends on what | [[Group_sprint 3]] · [[IoT devices]] |
+## 6. Decisions and how I checked them
 
-**[TODO: add the sources for the options in BCrypt, PostgreSQL, Retrofit and Java instead of Kotlin. Those notes have no sources yet.]**
+Each decision has its own note with the options, the reason and the checks. Here is the summary.
 
-### 4.2 Decisions and how I validated them
+### 6.1 Role type
+- **Question:** how to store whether a user is a tenant or a landlord.
+- **Options:** boolean column · number code · Java enum · two tables.
+- **Chosen:** Java enum `RoleType`, stored as text. It is easy to read in the database, and a new role only needs a new value.
+- **Checked:** code check on 16 Nov; the fix worked in the database on 17 Nov ([[Role type]]).
+- **Status:** taken.
 
-| Decision | Options I compared | Chosen | How I validated it | Status |
-| --- | --- | --- | --- | --- |
-| [[Role type]] | Boolean · int code · Java enum · two tables | Java enum `RoleType`, stored as string | Code check 16 Nov. Fix confirmed in the database on 17 Nov (screenshot). | taken |
-| [[Rol saved from Login]] | Save in registration · pass by Intent · save at login | Save at login (SharedPreferences) | Pendientes Android says "test with User and Landlord accounts" is done, but the 18 Nov daily says **not yet checked**. **[TODO: resolve this conflict.]** | status says "Close" |
-| [[Role-based screens]] | Visibility (`GONE`) · two activities · one host with fragments | One host with fragments, `GONE` for small differences | Not yet. Plan: log in as User and Landlord and call a landlord-only endpoint with a User account. | proposed |
+### 6.2 Where the role is saved
+- **Question:** when to save the role on the phone, so the app knows the user's view after restarting.
+- **Options:** save at registration · pass it between screens with Intents · save at login.
+- **Chosen:** save at login. Registration does not start a session, so the login response is the moment the app knows the role ([[Rol saved from Login]]).
+- **Checked:** **[TODO: conflict, see §8.]**
+- **Status:** taken.
 
-**Empty decision notes** (status "taken", but no options, no sources, no validation): [[BCrypt for passwords]] · [[PostgreSQL as shared database]] · [[Retrofit for API calls]] · [[Java instead of Kotlin]] · [[SharedPreferences session]]. **[TODO: fill them or change their status. As they are, they show a decision without the reasoning, which is the opposite of what LO3 asks for.]**
+### 6.3 Role-based screens
+- **Question:** how to show different screens to tenants and landlords.
+- **Options:** hide buttons inside each screen · two activities · one host activity with fragments.
+- **Chosen:** one host activity with fragments. The role decides the start screen and the menu. Login and registration stay as activities.
+- **Why:** two activities would copy login, registration and the profile screen, and a new role would mean a new activity.
+- **Checked:** not yet. The plan is to log in with a tenant and a landlord account and to check that the backend refuses a landlord-only action for a tenant ([[Role-based screens]]).
+- **Status:** the note still says "proposed". I decided it on 18 Nov ([[Daily 2026-11-18]]). **[TODO: update the status.]**
 
-## 5. Challenging my assumptions and iterating
+### 6.4 Keeping the session
+- **Question:** how the app remembers the user and the role after closing the app.
+- **Options:** keep the data only while the app runs · pass it with Intents · save it with SharedPreferences.
+- **Chosen:** SharedPreferences, under one file name, with Intents still used to pass the role to the next screen ([[SharedPreferences session]]).
+- **Why:** Intents only last while the screens are open, and I need the role after a restart. The password is never saved.
+- **Checked:** **[TODO: conflict, see §8.]**
+- **Status:** taken.
 
-This is the part I want to show most. Each row is an assumption I had, what challenged it, and what I changed.
+### 6.5 BCrypt for passwords
+- **Question:** how to store passwords so a leak does not reveal them.
+- **Options:** plain text · a fast hash without salt · BCrypt · Argon2 or scrypt (not compared in depth).
+- **Chosen:** BCrypt, because Spring Security already provides it, and it adds a random part to each password.
+- **Checked:** **[TODO: confirm, see the decision note.]**
+- **Status:** taken ([[BCrypt for passwords]]).
+
+### 6.6 PostgreSQL as shared database
+- **Question:** where the group's data is stored.
+- **Options:** H2 · SQLite · MySQL · PostgreSQL on the shared server.
+- **Chosen:** PostgreSQL on the shared server. Daniel already set it up, and one database avoids copies that do not match.
+- **Checked:** the backend starts and connects (18 Nov). A schema change worked on the shared database (17 Nov). **[TODO: check that one member's data is visible to the others.]**
+- **Status:** taken ([[PostgreSQL as shared database]]).
+
+### 6.7 Retrofit for API calls
+- **Question:** how the Android app calls the API.
+- **Options:** `HttpURLConnection` · OkHttp alone · Retrofit.
+- **Chosen:** Retrofit, with one interface per area of the API: `UserApi`, `HouseApi`, `ExpenseApi`.
+- **Checked:** the endpoints the app uses are listed in [[Endpoints]]. **[TODO: device test.]**
+- **Status:** taken ([[Retrofit for API calls]]).
+
+### 6.8 Java instead of Kotlin
+- **Question:** which language to use for the app and the back end.
+- **Options:** Kotlin · Java.
+- **Chosen:** Java. The team's back end is in Java, and one language is easier to share. Kotlin would be the better choice for an Android app on its own.
+- **Checked:** the backend starts in Java (18 Nov). **[TODO: confirm the Android part.]**
+- **Status:** taken ([[Java instead of Kotlin]]).
+
+## 7. Assumptions I challenged
 
 | My assumption | What challenged it | What I changed |
 | --- | --- | --- |
-| A boolean `is_landlord` is enough for two roles | Houses need an owner with specific rules. New roles will come. | Java enum: two values now, easy to extend. |
-| Two activities (one per role) is the clean option | Login, registration and profile would be duplicated. The nav graph still pointed to placeholder `FirstFragment` / `SecondFragment`. | One host activity with fragments; role decides the start screen and menu items. |
-| The role is only needed at login | After restarting the phone the role was lost. | Stored in SharedPreferences, cleared on logout. |
-| `@NotBlank` is fine for a new field | Old users had no role, so the `NOT NULL` column could not be added. The insert failed with a 500. | `@NotNull`, passed from `UserService`, and an SQL update for old users. Lost 90 min. Lesson recorded. |
-| Creating houses is new work for landlords | Creating houses and expenses already work. | **[TODO: confirm what I did: adapt the existing endpoint or rebuild it.]** |
-| Integration can be done at the end | Martin's warning; the eduCloud database was not ready on 16 Nov. | Integration moved into the planning as its own step, with a dependency on Daniel. |
+| A yes/no field is enough for two roles. | A new role would mean a new column. | A Java enum with named values ([[Role type]]). |
+| Two activities, one per role, are simpler. | Login and the profile would be copied, and the navigation graph still pointed to placeholder screens. | One host with fragments ([[Role-based screens]]). |
+| The role is only needed at login. | After closing the app, the role was lost. | Saved on the phone and cleared at logout ([[SharedPreferences session]]). |
+| A new required field is safe to add. | Existing users had no role, so the change failed. | A required field, a value for old users, and the fix recorded ([[Null enum in DB]]). |
+| Creating houses for landlords is new work. | The app already creates houses. | **[TODO: did you adapt the existing feature or rebuild it?]** |
+| Integration can be left to the end. | Martin's warning, and the shared database was not ready on 16 Nov. | Integration became a step with a dependency on Daniel. |
+| Passwords can be stored in a simple way. | A simple hash can be broken quickly. | BCrypt ([[BCrypt for passwords]]). |
+| Kotlin is the obvious choice for Android. | The back end is in Java, and the team has to share one language. | Java for both sides ([[Java instead of Kotlin]]). |
+| Feedback at the end of the project is enough. | Chris asked for feedback during the project. | A weekly feedback request, starting with this document (§8). |
 
-## 6. Reflection (LO4) **[TODO: write this in your own words]**
+## 8. Validation and feedback
 
-Prompts from the feedback. Answer each one with an example from §3–§5:
+### 8.1 What has been checked
 
-- What did I know before this project, and what did I learn from Obsidian, the feedback sessions and the bugs?
-- Which decision would I make differently today? (Each decision note has a "Review" section for this. Fill it at the end.)
-- Which feedback changed my process, and which did I *not* follow? Why?
-- What did the group do well, and what would I do differently in the next group sprint?
-
-## 7. Evidence index
-
-| Evidence | Where | Status |
+| Item | Evidence | Status |
 | --- | --- | --- |
-| Trello board, Sprint 3 | `Images/Trello_Sprint3_1.png` | Available |
-| Role column in the database | `Images/Role_Column_DB.png` | Available |
-| Role selector in the app | `Images/RolType_Selector.png` | Available |
-| Enum class in Spring | `Images/Enum_Class_Spring.png` | Available |
-| Group FeedPulse | `Images/Feedpulse_1.png` | Check: [[HouseMate]] still says missing |
-| Feature map photo (11 Nov) | — | **Missing** |
-| Five activities screenshots | — | **Missing** |
-| User and Landlord home screens | pending list in `Claude/Evidence` | **Missing** (needs the role check) |
-| Backend starts without connection errors | pending list in `Claude/Evidence` | **Missing** |
+| Role enum and database column | Code check 16 Nov; column in the database 17 Nov ([[Role type]]) | Checked |
+| Role at login with two accounts | [[Pendientes Android]] marks "test with User and Landlord accounts" as done. The 18 Nov daily note says the same test is **not checked yet** ([[Daily 2026-11-18]]). The session note says it was done ([[SharedPreferences session]]). | **Conflict: [TODO: give the date of the test, or leave it open.]** |
+| Views per role | Not yet tested | Pending |
+| Backend connects to the shared database | Backend starts on 18 Nov ([[Diario 2026-11-18]]) | Checked |
+| Java on both sides | Backend starts. Android build status conflicts between notes. | **[TODO]** |
 
-## 8. Before submitting: checklist
+### 8.2 Weekly validation
 
-- [ ] Write the goal and close of Sprint 1 and Sprint 2. Mark them as *written from memory* if they are.
-- [ ] Update the frontmatter of [[Sprint 3]] (`done: 0` is out of date).
-- [ ] Resolve the status conflicts in §4.2.
-- [ ] Fill or clean the five empty decision notes (§4.2).
-- [ ] Fix the links to notes that do not exist: [[Software teacher - code review]] · [[Docker]] · [[Retrofit]] · [[LoginActivity]] (in the vault these are missing or named differently).
-- [ ] Keep one place for decisions. Notes exist in both `Claude/Decisions` and `Projects/HouseMate/Decisions` for the same topics (role from login, SharedPreferences, fragments).
-- [ ] Add the group decision on Website ↔ Spring Boot (§3, 13 Nov).
-- [ ] Take the missing screenshots (§7).
-- [ ] Write §6 in your own words.
+Chris suggested asking for feedback every week, not only at the end. From the next session, I will bring one decision and one plan change, and note what the feedback changed in this document.
+
+## 9. Evidence
+
+| Evidence | Status |
+| --- | --- |
+| Trello board, Sprint 3 | Available ![[Images/Trello_Sprint3_1.png]] |
+| Role column in the database | Available ![[Images/Role_Column_DB.png]] |
+| Role selector in the app | Available ![[Images/RolType_Selector.png]] |
+| Enum class in Spring | Available ![[Images/Enum_Class_Spring.png]] |
+| Group FeedPulse | Available ![[Images/Feedpulse_1.png]] |
+| Second FeedPulse (Martin's feedback) | Available ![[Images/FeedPulse_2.png]] |
+| Structure diagram | Available ![[Images/Structure Diagram.png]] |
+| Feature map photo (11 Nov) | **Missing** |
+| Five activities | **Missing** |
+| Tenant and landlord home screens | **Missing** (needs the role test) |
+| Backend starting without connection errors | **Missing** |
+
+## 10. Before hand-in
+
+- [ ] Resolve the role test conflict in §8.1.
+- [ ] Update the status of [[Role-based screens]] to taken.
+- [ ] Write the goals and closes of Sprints 1 and 2.
+- [ ] Fill in the close of [[Sprint 3]] on Friday 20 Nov.
+- [ ] Confirm the group decision about Website ↔ Spring Boot (§3).
+- [ ] Fill in every **[TODO]** in §2–§8 with evidence you actually have.
+- [ ] Take the missing screenshots (§9).
+- [ ] Decide whether the duplicated decision notes in `Claude/Decisions` should be merged into `Projects/HouseMate/Decisions`.
