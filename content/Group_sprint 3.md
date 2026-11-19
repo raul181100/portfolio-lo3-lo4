@@ -26,8 +26,8 @@ cssclasses:
 ## Planned tasks
 
 > [!research]+ Research & planning — whole group
-> - [ ] Research
-> - [ ] Planning documentation and document about Trello
+> - [x] Research
+> - [x] Planning documentation and document about Trello
 
 > [!iot]+ IoT ↔ Android app — Nikolay & Raul
 > - [ ] Design connections between the intelligent devices and the Android app
@@ -36,14 +36,14 @@ cssclasses:
 > - [ ] Connect the website with the existing Spring Boot API of the Android app
 
 > [!roles]+ Roles — Raul
-> - [ ] Different roles logic and implementation → details in [[Sprint 3]]
+> - [x] Different roles logic and implementation → details in [[Sprint 3]]
 
 > [!expenses]+ New activities — not assigned yet
-> - [ ] New activities (e.g. Expenses)
+> - [x] New activities (e.g. Expenses)
 
 > [!warning] To decide at the Monday meeting
-> - [ ] Who takes "New activities (e.g. Expenses)"
-> - [ ] Daniel's own task for this sprint
+> - [x] Who takes "New activities (e.g. Expenses)"
+> - [x] Daniel's own task for this sprint
 
 ## Review (13 Nov)
 
@@ -64,11 +64,11 @@ cssclasses:
 > **Done:** 
 > **Not done, and why:** 
 > **Deviation from plan and cause:** 
-> **Bugs this week:** [[ ]]
-> **Decisions this week:** [[ ]]
+> **Bugs this week:** 
+> **Decisions this week:** 
 > **MoSCoW changes:** 
 > **What I change next week:** 
 
 > [!example] Evidence
 > Board screenshot:
-> ![[Trello_Sprint3_1.png]]
+> ![[Images/Trello_Sprint3_1.png]]

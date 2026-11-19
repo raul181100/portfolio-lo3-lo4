@@ -8,11 +8,11 @@ cssclasses:
 # Role type
 
 > [!abstract] 🧭 Context
-> For my project [[HouseMate]] I had to change the model where houses are created. Right now there is only one type of user, the normal user.
+> For my project HouseMate I had to change the model where houses are created. Right now there is only one type of user, the normal user.
 >
-> The problem: a house cannot be owned by a [[User rol]]. It must be owned by a [[Landlord rol]]. A [[Landlord rol]] does not take part in splitting expenses and cannot join any house that is not theirs. They also have the power to remove a [[User rol]] from their house if necessary.
+> The problem: a house cannot be owned by a User rol. It must be owned by a Landlord rol. A Landlord rol does not take part in splitting expenses and cannot join any house that is not theirs. They also have the power to remove a User rol from their house if necessary.
 >
-> 📅 These are the roles required as of [[2026-11-16]].
+> 📅 These are the roles required as of 2026-11-16.
 
 ## ⚖️ Options
 
@@ -35,8 +35,8 @@ cssclasses:
 ## ⚠️ Consequences
 
 > [!warning] Rules to remember
-> - `House.owner` must reference a user with the `LANDLORD` role, which is the [[Landlord rol]].
-> - The business rules for [[Landlord rol]] (no expense splitting, joining only their own houses, removing members) will be enforced in the service layer.
+> - `House.owner` must reference a user with the `LANDLORD` role, which is the Landlord rol.
+> - The business rules for Landlord rol (no expense splitting, joining only their own houses, removing members) will be enforced in the service layer.
 > - Adding a new role later means adding a new value to the `RoleType` enum and defining its rules.
 - Code check (16 Nov): `RoleType` lives in `entity/RoleType.java`, and `User` stores it in the `role` field. `CreateUserRequest` requires it at registration, and `UserResponse` returns it.
 

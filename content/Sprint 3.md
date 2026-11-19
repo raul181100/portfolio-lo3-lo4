@@ -18,21 +18,21 @@ cssclasses:
 ## Planned tasks
 
 > [!docs]+ Documentation & planning
-> - [ ] Split the [[Group_sprint 3]] tasks by person (note + Trello)
-> - [ ] Fill in the [[Role type]] decision and add new endpoints to [[Endpoints]]
+> - [x] Split the [[Group_sprint 3]] tasks by person (note + Trello)
+> - [x] Fill in the [[Role type]] decision and add new endpoints to [[Endpoints]]
 > - [ ] Friday: screenshots → Evidence, fill in "Close"
 
 > [!roles]+ Roles — [[Role type]]
 > *Done when: every user has a role (tenant / landlord) saved in the database and the app receives it at login.*
-> - [ ] Backend: `role` column in `users` (with Daniel) + `Role` enum in the User entity
-> - [ ] Accept the role at registration and return it at login
-> - [ ] Android: role selector at registration, save the role after login
+> - [x] Backend: `role` column in `users` (with Daniel) + `Role` enum in the User entity
+> - [x] Accept the role at registration and return it at login
+> - [x] Android: role selector at registration, save the role after login
 
 > [!views]+ Views per role
 > *Done when: tenant and landlord see different screens after login.*
-> - [ ] Open the landlord or tenant home depending on the role
-> - [ ] Layouts for both homes (hide landlord-only buttons for tenants)
-> - [ ] Endpoint + display of the specific data for each role
+> - [x] Open the landlord or tenant home depending on the role
+> - [x] Layouts for both homes (hide landlord-only buttons for tenants)
+> - [x] Endpoint + display of the specific data for each role
 
 > [!landlord]+ Landlord — create houses
 > *Done when: a landlord can create a house and see it in their list; a tenant cannot.*
@@ -72,12 +72,12 @@ cssclasses:
 > Whatever moves to Sprint 4 goes in "MoSCoW changes" as a decision, not as "no time".
 
 > [!question]- To clarify
-> Creating houses and expenses **already work** according to [[HouseMate]]. Check whether "Landlord — create houses" and "Add expenses" mean adapting them, so the work isn't repeated.
+> Creating houses and expenses **already work** according to HouseMate. Check whether "Landlord — create houses" and "Add expenses" mean adapting them, so the work isn't repeated.
 
 > [!todo] Before Monday 16
-> - [ ] Close [[Sprint 2]] and fill in [[Sprint 1]] from memory
-> - [ ] Ask Nikolay for the IoT data
-> - [ ] Fill in the empty notes: [[Role type]] (enum vs roles table), [[Landlord rol]], [[IoT devices]]
+> - [x] Close Sprint 2 and fill in Sprint 1 from memory
+> - [x] Ask Nikolay for the IoT data
+> - [x] Fill in the empty notes: [[Role type]] (enum vs roles table), Landlord rol, [[IoT devices]]
 
 ## Close & evidence
 
@@ -85,8 +85,8 @@ cssclasses:
 > **Done:** 
 > **Not done, and why:** 
 > **Deviation from plan and cause:** 
-> **Bugs this week:** [[ ]]
-> **Decisions this week:** [[ ]]
+> **Bugs this week:** 
+> **Decisions this week:** 
 > **MoSCoW changes:** 
 > **What I change next week:** 
 

@@ -1,16 +1,16 @@
 ---
 type: decision
 date: 2026-11-18
-status: proposed
+status: Close
 cssclasses:
   - decision
 ---
 # Role-based screens
 
 > [!abstract] 🧭 Context
-> For my project [[HouseMate]] the backend stores each user with a role (`User` or `Landlord`, Java enum `RoleType`, see [[Role type]]). The Android app has to show different things depending on that role: a landlord sees house management, a user sees their expenses.
+> For my project HouseMate the backend stores each user with a role (`User` or `Landlord`, Java enum `RoleType`, see [[Role type]]). The Android app has to show different things depending on that role: a landlord sees house management, a user sees their expenses.
 >
-> Right now the app has five activities: [[LoginActivity]], RegisterActivity, HouseActivity, UserActivity and ExpenseActivity. The role does not reach the app yet: the backend `UserResponse` already contains `role`, but the Android `UserResponse` DTO has no role field, and after login the app always opens `UserActivity`.
+> Right now the app has five activities: LoginActivity, RegisterActivity, HouseActivity, UserActivity and ExpenseActivity. The role does not reach the app yet: the backend `UserResponse` already contains `role`, but the Android `UserResponse` DTO has no role field, and after login the app always opens `UserActivity`.
 >
 > 📅 Decision needed before Sprint 3 (16–22 Nov).
 
@@ -45,7 +45,7 @@ cssclasses:
 
 ## 📚 Sources
 - Android docs: Navigation component, start destination
-- Course evidence list in [[HouseMate]]
+- Course evidence list in HouseMate
 
 ## 🧪 How I validated it
 - Not yet. Plan: log in as a `User` and as a `Landlord` and check that each sees the right screen. Also call the landlord-only endpoint with a `User` account and check the backend returns an error.

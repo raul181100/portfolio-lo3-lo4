@@ -10,7 +10,7 @@ cssclasses:
 ## Context
 The Spring Boot API stores all the data of HouseMate: users, houses, expenses and roles. The group needs one database that every member can reach, and not a copy on each laptop. The server is shared and managed by Daniel (see [[Group_sprint 3]]). The connection is made from Spring with JPA/Hibernate ([[Spring Boot]]).
 
-On 16 Nov I could not connect to the shared database from eduCloud, because the database had not been set up correctly ([[Daily/2026/11 - November/2026-11-16]]). On 18 Nov the backend started against PostgreSQL, using the container password passed as an environment variable ([[Claude/Diario/2026-11-18]]).
+On 16 Nov I could not connect to the shared database from eduCloud, because the database had not been set up correctly ([[Daily 2026-11-16]]). On 18 Nov the backend started against PostgreSQL, using the container password passed as an environment variable.
 
 ## Options
 | Option | For | Against |
@@ -25,10 +25,10 @@ The group needed one place where everyone's data would end up, and the server wa
 
 ## Sources
 - The server details and the connection in [[Endpoints]] and my notes from [[Group_sprint 3]]
-- My daily notes on the connection attempts ([[Daily/2026/11 - November/2026-11-16]] and [[Claude/Diario/2026-11-18]])
+- My daily notes on the connection attempts ([[Daily 2026-11-16]])
 
 ## How I validated it
-- 18 Nov: the backend starts and connects to PostgreSQL ([[Claude/Diario/2026-11-18]]).
+- 18 Nov: the backend starts and connects to PostgreSQL.
 - 17 Nov: a schema change (`ALTER TABLE users ADD COLUMN role …`) worked on the shared database, which fixed the bug in [[Null enum in DB]].
 
 ## Consequences

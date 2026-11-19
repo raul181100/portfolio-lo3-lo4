@@ -52,13 +52,13 @@ cssclasses:
 
 ## Evidence
 
-![[Role_Column_DB.png]]
+![[Images/Role_Column_DB.png]]
 
-![[Enum_Class_Spring.png]]
+![[Images/Enum_Class_Spring.png]]
 
-![[RolType_Selector.png]]
+![[Images/RolType_Selector.png]]
 
 ## Reusable lesson
 
 > [!tip] Lesson
-> → added to [[ ]] in Knowledge
+> → added to  in Knowledge

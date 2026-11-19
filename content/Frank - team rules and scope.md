@@ -32,4 +32,4 @@ cssclasses:
 > **After:** Clearer communication, improved engagement (in progress), group organization of workflows and individual responsibilities
 
 > [!example] Evidence
-> ![[Feedpulse_1.png]]
+> ![[Images/Feedpulse_1.png]]
