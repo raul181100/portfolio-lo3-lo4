@@ -30,12 +30,12 @@ The sprint has seven blocks and 19 steps. Each block has a "done when" sentence,
 | 📝 Documentation and planning | Tasks split by person; role decision and endpoints documented | 🟩🟩⬜ 2 of 3 |
 | 🎭 Roles | Every user has a role in the database and the app receives it at login | 🟩🟩🟩 3 of 3 |
 | 🖥️ Views per role | Tenant and landlord see different screens after login | 🟩🟩🟩 3 of 3 |
-| 🏠 Landlord: create houses | A landlord creates a house; a tenant cannot | ⬜⬜ 0 of 2 |
+| 🏠 Landlord: create houses | A landlord creates a house; a tenant cannot | 🟩🟩 2 of 2 |
 | 💶 Expenses | List, add and open the detail of an expense | ⬜⬜⬜ 0 of 3 |
 | 📊 IoT | The app shows IoT data in a chart | ⬜⬜⬜⬜ 0 of 4 |
 | 🚪 Logout | Logout returns to login, and back does not re-enter | ⬜ 0 of 1 |
 
-**Progress: 8 of 19 steps done.** The IoT block depends on data from another team member, so I planned it as a dependency rather than a step I control ([[Group_sprint 3]]).
+**Progress: 10 of 19 steps done.** The IoT block depends on data from another team member, so I planned it as a dependency rather than a step I control ([[Group_sprint 3]]).
 
 ### 1.3 Group split
 
@@ -105,6 +105,11 @@ The plan changed after each input. This is the timeline.
 > [!example] 19 November · Evidence
 > Screenshots of the backend running, the database running in Docker, the five activities, and the tenant and landlord home screens.
 
+> [!failure] 20 November · House button
+> Pressing "House" showed "Please check the data you entered" and closed the screen, before any request was sent.
+>
+> **What I did:** I traced the code and found that the login screen saved the user id in SharedPreferences but did not send it in the Intent to the next screen. I added the values to the Intent, and I recorded the lesson. [[Fail with Intents through activites]]
+
 ### 2.4 MoSCoW for Sprint 3 (proposed 13 November)
 
 | Priority | Blocks | Why |
@@ -142,6 +147,7 @@ Anything that moves to Sprint 4 is written as a decision in the sprint's "MoSCoW
 | howtodoinjava: NotBlank vs NotNull | Article | Why a new field fails on existing rows | [[Null enum in DB]] |
 | My own code | Code check (16 November) | What the backend already does with roles | [[Role type]] |
 | Trello board | Board | Who does what, and the workload | [[Group_sprint 3]] |
+| My own trace of the code and the Logcat (20 November) | Debugging | Why the House button closed before any request | [[Fail with Intents through activites]] |
 | Daily notes | My logs | What happened each day | [[Daily 2026-11-16]] · [[Daily 2026-11-17]] · [[Daily 2026-11-18]] |
 
 ## 5. Decisions
@@ -222,6 +228,7 @@ Anything that moves to Sprint 4 is written as a decision in the sprint's "MoSCoW
 | A simple password hash is enough. | A simple hash can be broken quickly. | BCrypt ([[BCrypt for passwords]]). |
 | Kotlin is the obvious choice for Android. | The back end is in Java, and the team needs one language. | Java on both sides ([[Java instead of Kotlin]]). |
 | Feedback at the end of the project is enough. | Chris asked for feedback during the project. | A weekly feedback routine, starting with this document. |
+| Data saved at login is available on the next screen. | The fragments read the Intent, which was empty, so the House button closed. | The values are sent with `putExtra` as well ([[Fail with Intents through activites]]). |
 
 ## 7. Evidence
 
@@ -271,10 +278,10 @@ Anything that moves to Sprint 4 is written as a decision in the sprint's "MoSCoW
 
 ## 8. What comes next
 
-> [!tip] Next steps in Sprint 3
-> - Test the role views with a tenant account and a landlord account.
-> - Add the landlord-only rules to the back end, so a tenant cannot create a house.
-> - Finish the expenses block: adding an expense from the app and opening its detail.
+> [!tip] Next steps
+> - Test the role views and the House button fix on the emulator, with a tenant account and a landlord account.
+> - Done: the back end now rejects a tenant creating a house, and a landlord joining one (403).
+> - Logout and expenses move to Sprint 4, as recorded in the sprint's MoSCoW changes.
 
 ## 9. Feedback loop
 

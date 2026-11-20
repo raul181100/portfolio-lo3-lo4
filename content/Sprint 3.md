@@ -36,8 +36,8 @@ cssclasses:
 
 > [!landlord]+ Landlord — create houses
 > *Done when: a landlord can create a house and see it in their list; a tenant cannot.*
-> - [ ] Backend: only landlords can create houses, linked to their account
-> - [ ] Android: "Create house" button only in the landlord view
+> - [x] Backend: only landlords can create houses, linked to their account
+> - [x] Android: "Create house" button only in the landlord view
 
 > [!expenses]+ Expenses
 > *Done when: in a house you see the expenses in a list, can add one and open its detail.*
@@ -82,13 +82,22 @@ cssclasses:
 ## Close & evidence
 
 > [!close]- Close (Friday)
-> **Done:** 
-> **Not done, and why:** 
-> **Deviation from plan and cause:** 
-> **Bugs this week:** 
-> **Decisions this week:** 
-> **MoSCoW changes:** 
-> **What I change next week:** 
+> **Done:** Documentation and planning, Roles, Views per role, Landlord.
+>
+> **Not done, and why:** Expenses (not done due to time). IoT (depends on Nikolay's data, not only on me). Logout (not done due to time).
+>
+> **Deviation from plan and cause:** The deviation from the plan was due to a lack of time. Halfway through Sprint 3 I had to create the LO3 documentation so it could be validated before the deadline, as we discussed with Chris (Portfolio 2 review).
+>
+> **Bugs this week:** [[Fail with Intents through activites]]
+>
+> **Decisions this week:** [[Rol saved from Login]], [[Role-based screens]]
+>
+> **MoSCoW changes:**
+> - Expenses: Could → Sprint 4 (already in the Sprint 4 goal).
+> - Logout: Must → Sprint 4 backlog, not done this week.
+> - IoT logic + chart: Should → next sprint (as planned).
+>
+> **What I change next week:** Check the House button fix on the emulator first. Then start Logout, since it was a Must this week. Then move on to Expenses in Sprint 4.
 
 > [!example] Evidence
-> - Board screenshot: 
+> - Board screenshot: ![[Images/Trello_Sprint3_1.png]]
